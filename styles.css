@@ -1,0 +1,426 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth; /* Added smooth scroll behavior */
+}
+
+body {
+    overflow-x: hidden;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 30%;
+    background-color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    height: 100vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.main-content {
+    width: 70%;
+    margin-left: 30%;
+}
+
+.hero {
+    height: 100vh;
+    background-image: linear-gradient(to right, #f44336, #9c27b0, #3f51b5, #4CAF50, #FFEB3B, #FF9800);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.cta-button:hover {
+    background-color: white;
+    color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+    padding: 100px 0;
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.section:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.container-inner {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 50px;
+}
+
+.column {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    color: #333;
+}
+
+.section-title:after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, #f44336, #9c27b0);
+    border-radius: 2px;
+}
+
+.text {
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+    color: #555;
+}
+
+.core-values-list {
+    list-style-type: none;
+}
+
+.core-values-list li {
+    margin-bottom: 35px;
+    position: relative;
+    padding: 25px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.core-values-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.value-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.value-title:before {
+    content: "•";
+    margin-right: 10px;
+    color: #9c27b0;
+    font-size: 1.5rem;
+}
+
+.company-header {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: #777;
+    margin-bottom: 60px;
+}
+
+/* Product Range Styles */
+.product-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.product-image {
+    flex: 1;
+    transition: transform 0.3s ease; /* Added transition for hover effect */
+}
+
+.product-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.product-image:hover {
+    transform: scale(1.05); /* Added hover effect */
+}
+
+.product-details {
+    flex: 1;
+    transition: transform 0.3s ease; /* Added transition for hover effect */
+}
+
+.product-details:hover {
+    transform: translateY(-5px); /* Added hover effect */
+}
+
+.product-list {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.product-list li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px;
+    line-height: 1.6;
+}
+
+.product-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #9c27b0;
+    font-weight: bold;
+}
+
+.product-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 25px 0 15px;
+    font-style: italic;
+}
+
+/* Partners Section */
+.partners-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.partner-logo {
+    max-width: 180px;
+    height: auto;
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+.partner-logo:hover {
+    filter: grayscale(0);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* Hide the images by default */
+.slide {
+    display: none;
+}
+
+/* Images */
+.slide img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+/* Caption text */
+.text {
+    color: #333;
+    font-size: 18px;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dots-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 20px;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .hero {
+        height: 60vh;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .container-inner {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .column {
+        padding: 0 10px;
+        margin-bottom: 30px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .product-container {
+        flex-direction: column;
+    }
+    
+    .partners-container {
+        gap: 20px;
+    }
+    
+    .partner-logo {
+        max-width: 120px;
+    }
+}
